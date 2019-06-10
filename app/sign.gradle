@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+Properties signing = new Properties()
+signing.load(new FileInputStream(file(project.property("release-signing.properties"))))
+Properties signingDebug = new Properties()
+signingDebug.load(new FileInputStream(file(project.property("debug-signing.properties"))))
+android {
+    signingConfigs {
+        release {
+            storeFile file(signing['storeFile'])
+            storePassword signing['storePassword']
+            keyAlias signing['releaseKeyAlias']
+            keyPassword signing['releaseKeyPassword']
+        }
+
+        debug {
+            storeFile file(signingDebug['storeFile'])
+            storePassword signingDebug['storePassword']
+            keyAlias signingDebug['debugKeyAlias']
+            keyPassword signingDebug['debugKeyPassword']
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+}
