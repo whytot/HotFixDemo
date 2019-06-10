@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android.applicationVariants.all { variant ->
+    def buildTask = variant.getAssembleProvider().get()
+    println "it.name : " + buildTask.name
+    buildTask.doLast {
+        variant.outputs.all { output ->
+            println buildTask.name + " -- outputFile : " + outputFile
+            if (outputFile != null && outputFile.name.endsWith(".apk")) {
+                def newFolder = "${rootProject.bakPath}/${variant.dirName}/"
+                def newFileName = rootProject.oldApkName
+                if (!file(newFolder).exists()) {
+                    file(newFolder).mkdirs()
+                }
+                if (!file(outputFile).exists()) {
+                    println "not exists : " + outputFile
+                }
+                copy {
+                    from outputFile
+                    into newFolder
+                    rename {
+                        newFileName
+                    }
+                }
+                if (variant.mappingFile != null) {
+                    copy {
+                        from variant.mappingFile
+                        into newFolder
+                        rename {
+                            rootProject.mappingName
+                        }
+                    }
+                }
+                copy {
+                    //r的mapping文件目前只能手动写地址，应该有更好的方法
+                    from "${buildDir}/intermediates/symbols/${variant.dirName}/R.txt"
+                    into newFolder
+                    rename {
+                        rootProject.RMappingName
+                    }
+                }
+            }
+        }
+    }
+}
