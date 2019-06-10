@@ -3,11 +3,13 @@ apply plugin: 'com.tencent.tinker.patch'
 
 tinkerPatch {
     tinkerEnable = true
-    oldApk "${bakPath}/${oldApkName}"
+    //oldApk，在task（tinkerProcess${variant.name.capitalize()}Config）中按照渠道设置
+//    oldApk "${bakPath}/${oldApkName}"
     buildConfig {
+        //两个mapping文件，在task（tinkerProcess${variant.name.capitalize()}Config）中按照渠道设置
+//        applyMapping "${rootProject.bakPath}/${rootProject.mappingName}"
+//        applyResourceMapping "${rootProject.bakPath}/${rootProject.RMappingName}"
         tinkerId rootProject.appVersion
-        applyMapping "${rootProject.bakPath}/${rootProject.mappingName}"
-        applyResourceMapping "${rootProject.bakPath}/${rootProject.RMappingName}"
         keepDexApply true
         isProtectedApp true
         supportHotplugComponent true
@@ -31,4 +33,20 @@ tinkerPatch {
 dependencies {
     compileOnly("com.tencent.tinker:tinker-android-anno:$rootProject.tinkerLibVersion")
     implementation("com.tencent.tinker:tinker-android-lib:$rootProject.tinkerLibVersion")
+}
+
+android.applicationVariants.all { variant ->
+    project.afterEvaluate {
+        task("tinkerProcess${variant.name.capitalize()}Config") {
+            group = "tinker"
+            def tinkerTask = tasks.getByName("tinkerPatch${variant.name.capitalize()}")
+            dependsOn tinkerTask
+            def preAssembleTask = tasks.getByName("process${variant.name.capitalize()}Manifest")
+            preAssembleTask.doFirst {
+                project.tinkerPatch.oldApk = "${rootProject.bakPath}/${variant.dirName}/${rootProject.oldApkName}"
+                project.tinkerPatch.buildConfig.applyMapping = "${rootProject.bakPath}/${variant.dirName}/${rootProject.mappingName}"
+                project.tinkerPatch.buildConfig.applyResourceMapping = "${rootProject.bakPath}/${variant.dirName}/${rootProject.RMappingName}"
+            }
+        }
+    }
 }
