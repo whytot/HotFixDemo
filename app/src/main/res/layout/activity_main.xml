@@ -18,7 +18,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="layout里面直接写的文案：sss" />
+        android:text="layout里面直接写的文案：hhh" />
 
     <Button
         android:layout_width="match_parent"

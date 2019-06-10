@@ -1,14 +1,12 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
     repositories {
         google()
         jcenter()
-        
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.2'
-        classpath ('com.tencent.tinker:tinker-patch-gradle-plugin:1.9.11')
+        classpath "com.tinkerpatch.sdk:tinkerpatch-gradle-plugin:1.2.13"
     }
 }
 
@@ -16,7 +14,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
     }
 }
 
@@ -27,6 +24,7 @@ task clean(type: Delete) {
 ext {
     appVersion = "1.0.0"
     tinkerLibVersion = "1.9.13"
+    tinkerPatchLibVersion = "1.2.13"
     bakPath = file("${buildDir}/bakApk/")
     outputPath = file("${buildDir}/output/")
     oldApkName = "oldApk.apk"

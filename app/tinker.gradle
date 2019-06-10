@@ -1,8 +1,18 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.tencent.tinker.patch'
+apply plugin: 'tinkerpatch-support'
 
+tinkerpatchSupport {
+    tinkerEnable = true
+    //为便于与无平台接入方案对比，此参数设为false，如果是已成型项目接入，建议使用true，这样能减轻重写Application类带来的‘压力’
+    reflectApplication = false
+    protectedApp = false
+    supportComponent = true
+    appVersion rootProject.appVersion
+    appKey = "your appkey"
+}
 tinkerPatch {
     tinkerEnable = true
+    ignoreWarning = true
     //oldApk，在task（tinkerProcess${variant.name.capitalize()}Config）中按照渠道设置
 //    oldApk "${bakPath}/${oldApkName}"
     buildConfig {
@@ -11,7 +21,7 @@ tinkerPatch {
 //        applyResourceMapping "${rootProject.bakPath}/${rootProject.RMappingName}"
         tinkerId rootProject.appVersion
         keepDexApply false
-        isProtectedApp true
+        isProtectedApp false
         supportHotplugComponent true
     }
     dex {
@@ -32,7 +42,7 @@ tinkerPatch {
 
 dependencies {
     compileOnly("com.tencent.tinker:tinker-android-anno:$rootProject.tinkerLibVersion")
-    implementation("com.tencent.tinker:tinker-android-lib:$rootProject.tinkerLibVersion")
+    implementation("com.tinkerpatch.sdk:tinkerpatch-android-sdk:$rootProject.tinkerPatchLibVersion")
 }
 
 android.applicationVariants.all { variant ->

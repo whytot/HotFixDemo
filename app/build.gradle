@@ -15,6 +15,7 @@ android {
             annotationProcessorOptions { includeCompileClasspath = true }
         }
         multiDexEnabled true
+        multiDexKeepProguard file("tinkerMultidexKeep.pro")
     }
     dexOptions {
         jumboMode = true

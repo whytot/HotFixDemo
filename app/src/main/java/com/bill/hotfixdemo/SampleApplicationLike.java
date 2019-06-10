@@ -29,6 +29,7 @@ public class SampleApplicationLike extends DefaultApplicationLike {
     @Override
     public void onCreate() {
         super.onCreate();
+        TinkerManager.getInstance().install();
     }
 
     @Override
@@ -36,7 +37,6 @@ public class SampleApplicationLike extends DefaultApplicationLike {
         super.onBaseContextAttached(base);
         mInstance = this;
         MultiDex.install(base);
-        TinkerManager.getInstance().install();
     }
 }
 

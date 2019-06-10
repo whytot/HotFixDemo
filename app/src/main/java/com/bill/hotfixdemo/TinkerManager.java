@@ -1,11 +1,9 @@
 package com.bill.hotfixdemo;
 
-import android.content.Context;
 import android.os.Environment;
 
 import com.tencent.tinker.entry.DefaultApplicationLike;
-import com.tencent.tinker.lib.patch.UpgradePatch;
-import com.tencent.tinker.lib.tinker.TinkerInstaller;
+import com.tinkerpatch.sdk.TinkerPatch;
 
 /**
  * @author Bill.WangBW
@@ -25,21 +23,22 @@ public class TinkerManager {
         }
         return tinkerManagerInstance;
     }
+
     public void install() {
         DefaultApplicationLike sampleApplicationLike = SampleApplicationLike.getApplicationInstance();
-        TinkerInstaller.install(sampleApplicationLike);
+        TinkerPatch.init(sampleApplicationLike)
+                .reflectPatchLibrary()
+                .setPatchRollbackOnScreenOff(true)
+                .setPatchRestartOnSrceenOff(true)
+                .setFetchPatchIntervalByHours(3);
     }
 
     public void onReceiveUpgradePatch() {
-        TinkerInstaller.onReceiveUpgradePatch(getApplicationContext(), patchFilePath);
+        TinkerPatch.with().fetchPatchUpdateAndPollWithInterval();
     }
 
     public void cleanPatch() {
-        TinkerInstaller.cleanPatch(getApplicationContext());
-    }
-
-    private Context getApplicationContext() {
-        return SampleApplicationLike.getApplicationInstance().getApplication();
+        TinkerPatch.with().cleanPatch();
     }
 
 }
