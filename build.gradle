@@ -28,6 +28,7 @@ ext {
     appVersion = "1.0.0"
     tinkerLibVersion = "1.9.13"
     bakPath = file("${buildDir}/bakApk/")
+    outputPath = file("${buildDir}/output/")
     oldApkName = "oldApk.apk"
     mappingName = "mapping.txt"
     RMappingName = "R-mapping.txt"
