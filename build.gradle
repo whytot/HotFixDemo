@@ -8,9 +8,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.2'
-        
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath ('com.tencent.tinker:tinker-patch-gradle-plugin:1.9.1')
     }
 }
 
@@ -31,4 +29,6 @@ ext {
     tinkerLibVersion = "1.9.13"
     bakPath = file("${buildDir}/bakApk/")
     oldApkName = "oldApk.apk"
+    mappingName = "mapping.txt"
+    RMappingName = "R-mapping.txt"
 }
