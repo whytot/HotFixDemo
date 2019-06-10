@@ -25,3 +25,12 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    bakPath = file("${buildDir}/bakApk/")
+    oldApkName = "oldApk.apk"
+    newApkName = "newApk.apk"
+    mappingName = "mapping.txt"
+    RMappingName = "R-mapping.txt"
+    appVersion = "1.0.0"
+}
