@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.tencent.tinker.patch'
+
+tinkerPatch {
+    tinkerEnable = true
+    oldApk "${bakPath}/${oldApkName}"
+    buildConfig {
+        tinkerId rootProject.appVersion
+        applyMapping "${rootProject.bakPath}/${rootProject.mappingName}"
+        applyResourceMapping "${rootProject.bakPath}/${rootProject.RMappingName}"
+        keepDexApply true
+        isProtectedApp true
+        supportHotplugComponent true
+    }
+    dex {
+        dexMode "jar"
+        loader = ["com.tencent.tinker.loader.*"]
+        pattern = ["classes*.dex",
+                   "assets/secondary-dex-?.jar"]
+    }
+    lib {
+        pattern = ["lib/*/*.so"]
+    }
+    res { pattern = ["res/*", "assets/*", "resources.arsc", "AndroidManifest.xml"] }
+    packageConfig {}
+    sevenZip {
+        zipArtifact = "com.tencent.mm:SevenZip:1.1.10"
+    }
+}
+
+dependencies {
+    compileOnly("com.tencent.tinker:tinker-android-anno:$rootProject.tinkerLibVersion")
+    implementation("com.tencent.tinker:tinker-android-lib:$rootProject.tinkerLibVersion")
+}

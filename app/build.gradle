@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply from: 'tinkerPatch.gradle'
 
 android {
     compileSdkVersion 28

@@ -25,3 +25,10 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    appVersion = "1.0.0"
+    tinkerLibVersion = "1.9.13"
+    bakPath = file("${buildDir}/bakApk/")
+    oldApkName = "oldApk.apk"
+}
