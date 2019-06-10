@@ -7,7 +7,7 @@ android.applicationVariants.all { variant ->
         variant.outputs.all { output ->
             println buildTask.name + " -- outputFile : " + outputFile
             if (outputFile != null && outputFile.name.endsWith(".apk")) {
-                def newFolder = "${rootProject.bakPath}/${variant.dirName}/"
+                def newFolder = "${rootProject.outputPath}/${variant.dirName}/"
                 def newFileName = rootProject.oldApkName
                 if (!file(newFolder).exists()) {
                     file(newFolder).mkdirs()
