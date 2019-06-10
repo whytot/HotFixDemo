@@ -18,7 +18,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="layout里面直接写的文案：asd" />
+        android:text="layout里面直接写的文案：sss" />
 
     <Button
         android:layout_width="match_parent"
@@ -33,5 +33,19 @@
         android:layout_weight="1"
         android:onClick="onClick2"
         android:text="调用XXManager里面的方法" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="onClick3"
+        android:text="拉取patch" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="onClick4"
+        android:text="清理patch" />
 
 </LinearLayout>

@@ -24,10 +24,10 @@ public class XXManager {
     }
 
     private void showSomeThing1() {
-        Toast.makeText(App.getInstance(), "XXManager.showSomeThing1", Toast.LENGTH_LONG).show();
+        Toast.makeText(SampleApplicationLike.getApplicationInstance().getApplication(), "XXManager.showSomeThing1", Toast.LENGTH_LONG).show();
     }
 
     private void showSomeThing2() {
-        Toast.makeText(App.getInstance(), "XXManager.showSomeThing2", Toast.LENGTH_LONG).show();
+        Toast.makeText(SampleApplicationLike.getApplicationInstance().getApplication(), "XXManager.showSomeThing2", Toast.LENGTH_LONG).show();
     }
 }

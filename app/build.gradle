@@ -16,6 +16,9 @@ android {
         }
         multiDexEnabled true
     }
+    dexOptions {
+        jumboMode = true
+    }
     buildTypes {
         release {
             minifyEnabled true

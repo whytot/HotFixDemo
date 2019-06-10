@@ -10,7 +10,7 @@ tinkerPatch {
 //        applyMapping "${rootProject.bakPath}/${rootProject.mappingName}"
 //        applyResourceMapping "${rootProject.bakPath}/${rootProject.RMappingName}"
         tinkerId rootProject.appVersion
-        keepDexApply true
+        keepDexApply false
         isProtectedApp true
         supportHotplugComponent true
     }
