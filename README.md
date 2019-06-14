@@ -1,4 +1,5 @@
 本demo旨在测试主流Android hotfix方案
+    目前包含Tinker（本地&tinkerPatch平台）/阿里sophix方案
 
 git分支结构：
     master分支：
