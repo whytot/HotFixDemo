@@ -40,6 +40,8 @@ public class SophixStubApplication extends SophixApplication {
         final SophixManager instance = SophixManager.getInstance();
         instance.setContext(this)
                 .setAppVersion(appVersion)
+                //下面的参数需妥善保管，做好加密策略
+                .setSecretMetaData("XXXX", "CCCC", "VVVV")
                 .setEnableDebug(true)
                 .setEnableFullLog()
                 .setPatchLoadStatusStub(new PatchLoadStatusListener() {
