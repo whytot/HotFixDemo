@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.taobao.sophix.SophixManager;
+
 /**
  * @author Bill.WangBW
  */
@@ -22,5 +24,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick2(View view) {
         XXManager.getInstance().showSomeThing();
+    }
+
+    public void onClick3(View view) {
+        SophixManager.getInstance().queryAndLoadNewPatch();
+    }
+
+    public void onClick4(View view) {
+        SophixManager.getInstance().cleanPatches();
     }
 }

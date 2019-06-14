@@ -34,4 +34,18 @@
         android:onClick="onClick2"
         android:text="调用XXManager里面的方法" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="onClick3"
+        android:text="拉去补丁" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="onClick4"
+        android:text="清理补丁" />
+
 </LinearLayout>
