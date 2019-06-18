@@ -8,7 +8,8 @@ git分支结构：
         测试某一项hotfix方案
 
 ---------------------------------------
-sophix/develop
+sophix/develop-hot
+    *此分支测试可以进行热更新的情况*
     接入sophix方案
     使用方法：
         * 在阿里云平台创建应用，获取三条必要信息，在SophixStubApplication中setSecretMetaData三个参数
