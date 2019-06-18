@@ -26,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
         XXManager.getInstance().showSomeThing();
     }
 
+    public void onClickQ(View view) {
+        Toast.makeText(this, XXManager.getInstance().getSomething(), Toast.LENGTH_LONG).show();
+    }
+
     public void onClick3(View view) {
         SophixManager.getInstance().queryAndLoadNewPatch();
     }
