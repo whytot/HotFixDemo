@@ -34,4 +34,11 @@
         android:onClick="onClick2"
         android:text="调用XXManager里面的方法" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="onClickQ"
+        android:text="getSomething" />
+
 </LinearLayout>

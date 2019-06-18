@@ -23,4 +23,8 @@ public class MainActivity extends AppCompatActivity {
     public void onClick2(View view) {
         XXManager.getInstance().showSomeThing();
     }
+
+    public void onClickQ(View view) {
+        Toast.makeText(this, XXManager.getInstance().getSomething(), Toast.LENGTH_LONG).show();
+    }
 }
