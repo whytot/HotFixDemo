@@ -30,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick3(View view) {
-//        SophixManager.getInstance().queryAndLoadNewPatch();
+        SophixManager.getInstance().queryAndLoadNewPatch();
     }
 
     public void onClick4(View view) {
-//        SophixManager.getInstance().cleanPatches();
+        SophixManager.getInstance().cleanPatches();
     }
 }
