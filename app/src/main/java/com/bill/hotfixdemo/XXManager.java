@@ -36,30 +36,6 @@ public class XXManager {
     private static XXManager xXManagerInstance;
 
     private XXManager() {
-        mBaseModels = new ArrayList<>();
-        mBaseModels.add(new ModifyMethodModelImpl());
-        mBaseModels.add(new ModifyMethod1ModelImpl());
-        mBaseModels.add(new ModifyMethod2ModelImpl());
-        mBaseModels.add(new ModifyMethod3ModelImpl());
-        mBaseModels.add(new ModifyMethod4ModelImpl());
-        mBaseModels.add(new ModifyMethod5ModelImpl());
-        mBaseModels.add(new ModifyMethod6ModelImpl());
-        mBaseModels.add(new ModifyMethod7ModelImpl());
-        mBaseModels.add(new ModifyMethod8ModelImpl());
-        mBaseModels.add(new ModifyMethod9ModelImpl());
-        mBaseModels.add(new ModifyMethod10ModelImpl());
-        mBaseModels.add(new FinalStaticFieldModelImpl());
-        mBaseModels.add(new FinalStaticField1ModelImpl());
-        mBaseModels.add(new FinalStaticField2ModelImpl());
-        mBaseModels.add(new FinalStaticField3ModelImpl());
-        mBaseModels.add(new ModifyClassModelImpl());
-        mBaseModels.add(new ModifyClass1ModelImpl());
-        mBaseModels.add(new ModifyClass2ModelImpl());
-        mBaseModels.add(new ModifyClass3ModelImpl());
-        mBaseModels.add(new ModifyClass4ModelImpl());
-        mBaseModels.add(new ModifyClass5ModelImpl());
-        mBaseModels.add(new ModifyBlockModelImpl());
-        mBaseModels.add(new ModifyBlock1ModelImpl());
     }
 
     public static synchronized XXManager getInstance() {
@@ -69,9 +45,31 @@ public class XXManager {
         return xXManagerInstance;
     }
 
-    private List<BaseModel> mBaseModels;
-
     public List<BaseModel> getBaseModels() {
-        return mBaseModels;
+        List<BaseModel> baseModels = new ArrayList<>();
+        baseModels.add(new ModifyMethodModelImpl());
+        baseModels.add(new ModifyMethod1ModelImpl());
+        baseModels.add(new ModifyMethod2ModelImpl());
+        baseModels.add(new ModifyMethod3ModelImpl());
+        baseModels.add(new ModifyMethod4ModelImpl());
+        baseModels.add(new ModifyMethod5ModelImpl());
+        baseModels.add(new ModifyMethod6ModelImpl());
+        baseModels.add(new ModifyMethod7ModelImpl());
+        baseModels.add(new ModifyMethod8ModelImpl());
+        baseModels.add(new ModifyMethod9ModelImpl());
+        baseModels.add(new ModifyMethod10ModelImpl());
+        baseModels.add(new FinalStaticFieldModelImpl());
+        baseModels.add(new FinalStaticField1ModelImpl());
+        baseModels.add(new FinalStaticField2ModelImpl());
+        baseModels.add(new FinalStaticField3ModelImpl());
+        baseModels.add(new ModifyClassModelImpl());
+        baseModels.add(new ModifyClass1ModelImpl());
+        baseModels.add(new ModifyClass2ModelImpl());
+        baseModels.add(new ModifyClass3ModelImpl());
+        baseModels.add(new ModifyClass4ModelImpl());
+        baseModels.add(new ModifyClass5ModelImpl());
+        baseModels.add(new ModifyBlockModelImpl());
+        baseModels.add(new ModifyBlock1ModelImpl());
+        return baseModels;
     }
 }

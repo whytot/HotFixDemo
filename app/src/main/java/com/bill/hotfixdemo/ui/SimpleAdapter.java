@@ -10,13 +10,23 @@ import android.widget.TextView;
 import com.bill.hotfixdemo.XXManager;
 import com.bill.hotfixdemo.model.BaseModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.SimpleViewHolder> {
     private List<BaseModel> data;
 
     public SimpleAdapter() {
-        data = XXManager.getInstance().getBaseModels();
+        data = new ArrayList<>();
+    }
+
+    public void reload() {
+        if (data.isEmpty()) {
+            data = XXManager.getInstance().getBaseModels();
+        } else {
+            data.clear();
+        }
+        notifyDataSetChanged();
     }
 
     @NonNull

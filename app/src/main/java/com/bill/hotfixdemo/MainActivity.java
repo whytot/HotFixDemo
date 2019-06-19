@@ -36,4 +36,8 @@ public class MainActivity extends AppCompatActivity {
     public void onClick4(View view) {
         SophixManager.getInstance().cleanPatches();
     }
+
+    public void onClick5(View view) {
+        mAdapter.reload();
+    }
 }

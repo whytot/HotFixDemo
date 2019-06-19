@@ -18,6 +18,12 @@
         android:onClick="onClick4"
         android:text="清理补丁" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick5"
+        android:text="刷新列表" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
