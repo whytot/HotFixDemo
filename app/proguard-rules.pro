@@ -34,10 +34,10 @@
 -ignorewarnings
 #hotfix
 #基线包使用，生成mapping.txt
-#-printmapping mapping.txt
+-printmapping mapping.txt
 #生成的mapping.txt在app/buidl/outputs/mapping/release路径下，移动到/app路径下
 #修复后的项目使用，保证混淆结果一致
--applymapping mapping.txt
+#-applymapping mapping.txt
 
 -dontwarn com.google.**
 -dontwarn com.android.**
@@ -103,3 +103,5 @@ native <methods>;
 -dontwarn com.alibaba.**
 -dontwarn com.ta.**
 -dontwarn com.ut.**
+
+-keep class com.bill.hotfixdemo.utils.**{*;}

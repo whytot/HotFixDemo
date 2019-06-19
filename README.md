@@ -21,6 +21,7 @@ sophix/develop-hot
         #patch包
             创建“bakApk”目录（“根目录/build/bakApk”）
             复制output目录下的指定渠道包到bakApk目录下（“根目录/build/bakApk”）
+            复制output/release目录下的mapping.txt到app目录下
             修改代码
             关闭proguard-rules.pro中“-printmapping mapping.txt”代码行
             启用proguard-rules.pro中“-applymapping mapping.txt”代码行
