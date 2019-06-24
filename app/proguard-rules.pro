@@ -105,5 +105,6 @@ native <methods>;
 -dontwarn com.ut.**
 
 -keep class com.bill.hotfixdemo.utils.**{*;}
+-keep class com.bill.hotfixdemo.model.**{*;}
 #如果不加这一步 会导致打patch工具认为有非Android原生类
 -keep class android.support.multidex.**{*;}
