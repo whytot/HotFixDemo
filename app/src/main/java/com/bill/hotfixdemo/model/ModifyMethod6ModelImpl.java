@@ -6,7 +6,7 @@ package com.bill.hotfixdemo.model;
  * @author Bill.WangBW
  */
 public class ModifyMethod6ModelImpl implements BaseModel {
-    String text = "why-1";
+    String text = new String("why-1");
 
     @Override
     public String getTitle() {

@@ -18,6 +18,6 @@ public class ModifyMethod4ModelImpl implements BaseModel {
     }
 
     private class InnerClz {
-        String t = "why-1";
+        String t = new String("why-1");
     }
 }
