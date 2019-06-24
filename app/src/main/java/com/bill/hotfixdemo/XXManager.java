@@ -13,6 +13,8 @@ import com.bill.hotfixdemo.model.ModifyClass3ModelImpl;
 import com.bill.hotfixdemo.model.ModifyClass4ModelImpl;
 import com.bill.hotfixdemo.model.ModifyClass5ModelImpl;
 import com.bill.hotfixdemo.model.ModifyClassModelImpl;
+import com.bill.hotfixdemo.model.ModifyFiledModel1Impl;
+import com.bill.hotfixdemo.model.ModifyFiledModelImpl;
 import com.bill.hotfixdemo.model.ModifyMethod10ModelImpl;
 import com.bill.hotfixdemo.model.ModifyMethod1ModelImpl;
 import com.bill.hotfixdemo.model.ModifyMethod2ModelImpl;
@@ -70,6 +72,8 @@ public class XXManager {
         baseModels.add(new ModifyClass5ModelImpl());
         baseModels.add(new ModifyBlockModelImpl());
         baseModels.add(new ModifyBlock1ModelImpl());
+        baseModels.add(new ModifyFiledModelImpl());
+        baseModels.add(new ModifyFiledModel1Impl());
         return baseModels;
     }
 }
