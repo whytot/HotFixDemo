@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
  * @author Bill.WangBW
  */
 public class ModifyMethod1ModelImpl implements BaseModel {
-    private static final String TAG = "ModifyMethod1ModelImpl";
+    private static final String TAG = "sophix.ModifyMethod1ModelImpl";
 
     @Override
     public String getTitle() {

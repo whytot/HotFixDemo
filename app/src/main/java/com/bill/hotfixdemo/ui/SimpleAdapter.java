@@ -2,6 +2,7 @@ package com.bill.hotfixdemo.ui;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.SimpleViewHolder> {
+    private static final String TAG = "sophix.adapter";
     private List<BaseModel> data;
 
     public SimpleAdapter() {
@@ -39,7 +41,11 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.SimpleView
     @Override
     public void onBindViewHolder(@NonNull SimpleViewHolder simpleViewHolder, int i) {
         simpleViewHolder.title.setText(data.get(i).getTitle());
-        simpleViewHolder.content.setText("\t" + data.get(i).getResult());
+        try {
+            simpleViewHolder.content.setText("\t" + data.get(i).getResult());
+        } catch (Exception e) {
+            Log.e(TAG, "error", e);
+        }
     }
 
     @Override

@@ -15,7 +15,7 @@ import com.taobao.sophix.listener.PatchLoadStatusListener;
  * @author Bill.WangBW
  */
 public class SophixStubApplication extends SophixApplication {
-    private final String TAG = "SophixStubApplication";
+    private final String TAG = "sophix.StubApplication";
 
     @Keep
     @SophixEntry(App.class)

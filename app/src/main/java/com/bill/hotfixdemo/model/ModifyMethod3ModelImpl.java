@@ -25,7 +25,7 @@ public class ModifyMethod3ModelImpl implements BaseModel {
     }
 
     class InnerClz {
-        static final String TAG = "InnerClz";
+        static final String TAG = "sophix.InnerClz";
 
         InnerClz() {
             showT();
