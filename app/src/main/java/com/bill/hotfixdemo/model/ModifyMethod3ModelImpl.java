@@ -20,6 +20,7 @@ public class ModifyMethod3ModelImpl implements BaseModel {
     @Override
     public String getResult() {
         InnerClz innerClz = new InnerClz();
+//        return innerClz.t;
         return "why-1";
     }
 
@@ -30,7 +31,7 @@ public class ModifyMethod3ModelImpl implements BaseModel {
             showT();
         }
 
-        private String t = new String("why-1");
+        private String t = new String("why-2");
 
         void showT() {
             Log.e(TAG, t);

@@ -17,6 +17,7 @@ public class ModifyMethod4ModelImpl implements BaseModel {
     @Override
     public String getResult() {
         InnerClz innerClz = new InnerClz();
+//        return innerClz.t;
         return "why-1";
     }
 
@@ -27,7 +28,7 @@ public class ModifyMethod4ModelImpl implements BaseModel {
             showT();
         }
 
-        String t = new String("why-1");
+        String t = new String("why-2");
 
         void showT() {
             Log.e(TAG, t);
