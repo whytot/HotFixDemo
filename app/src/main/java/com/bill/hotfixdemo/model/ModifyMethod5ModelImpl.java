@@ -1,16 +1,16 @@
 package com.bill.hotfixdemo.model;
 
 /**
- * 修改方法返回值泛型验证热替换
+ * 内部类增加对外部类私有属性的引用
  *
  * @author Bill.WangBW
  */
 public class ModifyMethod5ModelImpl implements BaseModel {
-    private String text = new String("why-1");
+    private String text = new String("why-2");
 
     @Override
     public String getTitle() {
-        return "修改被内部引用的外部类私有字段";
+        return "内部类增加对外部类私有属性的引用";
     }
 
     @Override
@@ -19,6 +19,14 @@ public class ModifyMethod5ModelImpl implements BaseModel {
     }
 
     private class InnerClz {
-        String t = ModifyMethod5ModelImpl.this.text;
+        InnerClz() {
+            modifyT();
+        }
+
+        String t = new String("why-1");
+
+        void modifyT() {
+//            t = ModifyMethod5ModelImpl.this.text;
+        }
     }
 }
