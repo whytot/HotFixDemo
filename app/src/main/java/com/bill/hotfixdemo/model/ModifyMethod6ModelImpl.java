@@ -18,7 +18,7 @@ public class ModifyMethod6ModelImpl implements BaseModel {
         return new InnerClz().t;
     }
 
-    private class InnerClz {
+    class InnerClz {
         InnerClz() {
             modifyT();
         }

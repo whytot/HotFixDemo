@@ -21,8 +21,8 @@ public class ModifyMethod4ModelImpl implements BaseModel {
         return "why-1";
     }
 
-    private class InnerClz {
-        private static final String TAG = "InnerClz";
+    class InnerClz {
+        static final String TAG = "InnerClz";
 
         InnerClz() {
             showT();
