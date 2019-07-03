@@ -1,4 +1,4 @@
-# BadgeForAppIcon
+# HotFixDemo
 
 本demo旨在测试主流Android hotfix方案</br>
 > 目前包含Tinker（本地&tinkerPatch平台）/阿里sophix方案</br>
