@@ -1,7 +1,10 @@
 # HotFixDemo
 
 本demo旨在测试主流Android hotfix方案</br>
-> 目前包含Tinker（本地&tinkerPatch平台）/阿里sophix方案</br>
+* 目前包含:</br>
+  [Tinker本地方案](https://github.com/whytot/HotFixDemo/tree/tinker/develop)</br>
+  [TinkerPatch平台方案](https://github.com/whytot/HotFixDemo/tree/tinker/develop-platform)</br>
+  [sophix方案](https://github.com/whytot/HotFixDemo/tree/sophix/develop)</br>
 
 ## git分支结构：</br>
 * master分支：</br>
