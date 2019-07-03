@@ -26,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
         XXManager.getInstance().showSomeThing();
     }
 
+    public void onClickQ(View view) {
+        Toast.makeText(this, XXManager.getInstance().getSomething(), Toast.LENGTH_LONG).show();
+    }
+
     public void onClick3(View view) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_PERMISSION_STORAGE);
